@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Euker Online!</title>
+    <link href="./style.css" type = "text/css" rel="stylesheet">
+    <link href="./animate.css" type = "text/css" rel="stylesheet">
+    <script src = "./engine.js" async></script>
+    <script src = "./gui.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Calistoga&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <div id="g-window">
+      <div id="g-stats">
+          <li>Round</li>
+          <li>Trick</li>
+          <li>Red</li>
+          <li>Black</li>
+          <li>-1</li>
+          <li>-1</li>
+          <li>-1pts</li>
+          <li>-1pts</li>
+      </div>
+      <div id="players" class="vert-container">Players
+        <div id="p0" class="vc-item"><div class="p-info"><img class="p-img" src="./Icons/rdPlr.svg"><div class="p-name">Sam</div></div><div class="p-stats"><img
+        src="./Cards/back.svg"> <div class="p-num-cds">-1</div> <img src="./Icons/tricks.svg"> -1</div></div>
+        <div id="p1" class="vc-item"><div class="p-info"><img class="p-img" src="./Icons/rdPlr.svg"><div class="p-name">Sam</div></div><div class="p-stats"><img
+        src="./Cards/back.svg"> <div class="p-num-cds">-1</div> <img src="./Icons/tricks.svg"> -1</div></div>
+        <div id="p2" class="vc-item"><div class="p-info"><img class="p-img" src="./Icons/rdPlr.svg"><div class="p-name">Sam</div></div><div class="p-stats"><img
+        src="./Cards/back.svg"> <div class="p-num-cds">-1</div> <img src="./Icons/tricks.svg"> -1</div></div>
+        <div id="p3" class="vc-item"><div class="p-info"><img class="p-img" src="./Icons/rdPlr.svg"><div class="p-name">Sam</div></div><div class="p-stats"><img
+        src="./Cards/back.svg"> <div class="p-num-cds">-1</div> <img src="./Icons/tricks.svg"> -1</div></div>
+      </div>
+      <div id="board">
+        <div id="cards">
+            <img id="upcard" src="./Cards/12d.svg">
+            <!--<img src="./Cards/11c.svg">
+            <img src="./Cards/11c.svg">
+            <img src="./Cards/11c.svg">-->
+        </div>
+        <div id="actions">
+          <button>Make</button>
+          <button>Pass</button>
+        </div>
+      </div>
+      <div id="hand" class="hor-container">
+        <img src="./Cards/9c.svg">
+        <img src="./Cards/10s.svg">
+        <img src="./Cards/11d.svg">
+        <img src="./Cards/12s.svg">
+        <img src="./Cards/14d.svg">
+      </div>
+    </div>
+  </body>
+</html>
