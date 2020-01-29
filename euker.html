@@ -3,7 +3,6 @@
   <head>
     <title>Euker Online!</title>
     <link href="./style.css" type = "text/css" rel="stylesheet">
-    <link href="./animate.css" type = "text/css" rel="stylesheet">
     <script src = "./engine.js" async></script>
     <script src = "./gui.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Calistoga&display=swap" rel="stylesheet">
@@ -21,10 +20,11 @@
           <li>-1pts</li>
       </div>
       <div id="top-box">
-        <div class="history">Sam Played Card<br></div>
-        <div class="history">Jack Played Spade<br></div>
-        <div class="history">Ben Granted Wish<br></div>
-        <div class="history">Recorded Album</div>
+        <!--History is updated with addAction(str) -->
+        <div class="history"><br></div>
+        <div class="history"><br></div>
+        <div class="history"><br></div>
+        <div class="history"></div>
       </div>
       <div id="players" class="vert-container">Players
         <div id="p0" class="vc-item"><div class="p-info"><img class="p-img" src="./Icons/rdPlr.svg"><div class="p-name">Sam</div></div><div class="p-stats"><img
@@ -42,7 +42,7 @@
         </div>
         <div class="actions">
           <button id="b_make">Make</button>
-          <button id="b_make">Pass</button>
+          <button id="b_pass">Pass</button>
         </div>
       </div>
       <div id="hand" class="hor-container">

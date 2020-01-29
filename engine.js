@@ -1,3 +1,6 @@
+//GLOBAL SWITCHES
+let isPicking = true;
+
 //UPDATE HISTORY
 let actions = ['', '', '', ''];
 init = document.getElementsByClassName("history");
@@ -152,7 +155,7 @@ class Game {
         break;
       }
     }
-    if (!picked) {
+    /*if (!picked) {
       let c = 0;
       for (let i = this.dealer + 1; i < this.dealer + 5; i++) {
         if (this.players[i % 4].Call(c, upcard)) {
@@ -161,8 +164,8 @@ class Game {
         }
         c++;
       }
-    }
-    this.Sort();
+    }*/
+    //this.Sort();
   }
   Sort = () => {
     for (let i = 0; i < 4; i++) {
@@ -201,13 +204,14 @@ class Human extends Player {
   addCard = (card) => {
     this.hand.push(card);
     var new_card = document.createElement("img");
+    new_card.className = "hoverEnl";
     new_card.src = "./Cards/" + card.Rank() + card.Suit().toLowerCase() + ".svg";
     document.getElementById('hand').appendChild(new_card);
   }
   isRobot = () => false;
-  Take = (trump) => {
-    let makeClick = document.getElementById('b_make');
-    let passClick = document.getElementById('b_click');
+  Take = (upcard) => {
+    document.getElementById('b_make').addEventListener("onclick", beginRound());
+    document.getElementById('b_pass').addEventListener("onclick", makeAgain());
   }
   Call = (c, upcard) => {
 
@@ -277,3 +281,46 @@ for (let i = 0; i < 4; i++) {
 }
 
 //CARDS
+
+//ANIMATION
+const enlarge = (evt) => {
+  if (evt.target.classList.contains('hoverEnl')) {
+      if (evt.target.classList.contains('deEnlarge')) {
+          evt.target.classList.remove('deEnlarge');
+      }
+      if (!evt.target.classList.contains('enlarge')) {
+          evt.target.classList.add('enlarge');
+      }
+      if (!evt.target.classList.contains('animated')) {
+          evt.target.classList.add('animated');
+      }
+      else {
+          evt.target.classList.remove('animated');
+          evt.target.classList.add('animated');
+      }
+  }
+}
+
+const deEnlarge = (evt) => {
+  if (evt.target.classList.contains('hoverEnl')) {
+      if (evt.target.classList.contains('enlarge')) {
+          evt.target.classList.remove('enlarge');
+          evt.target.classList.add('deEnlarge');
+      }   
+      if (evt.target.classList.contains('animated')) {
+          evt.target.classList.remove('animated');
+          evt.target.classList.add('animated');
+      }
+      else {
+          evt.target.classList.add('animated');
+      }
+  }
+}
+let toBeEnlrg = document.getElementsByClassName('hoverEnl');
+
+for (let q = 0; q < toBeEnlrg.length; q++) {
+  if (isPicking) {
+        toBeEnlrg[q].addEventListener("mouseover", enlarge);
+        toBeEnlrg[q].addEventListener("mouseout", deEnlarge);
+      }
+    }
